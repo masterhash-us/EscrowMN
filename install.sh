@@ -77,6 +77,7 @@ sleep 3
 sudo apt-get -y install software-properties-common
 sudo apt-add-repository -y ppa:bitcoin/bitcoin
 sudo apt-get -y update
+sudo apt-get -y upgrade
 
 # Install required packages
 echo && echo "Installing base packages..."
@@ -94,7 +95,14 @@ sudo apt-get -y install \
     libboost-thread-dev \
     libdb4.8-dev \
     libdb4.8++-dev \
-    libminiupnpc-dev 
+    libminiupnpc-dev \
+    libboost-all-dev \
+    libdb4.8-dev \
+    libdb4.8++-dev \
+    libminiupnpc-dev \
+    libzmq3-dev
+    
+sudo apt-get -y install build-essential libtool autotools-dev automake pkg-config libssl-dev bsdmainutils
 
 # Install fail2ban if needed
 if [[ ("$install_fail2ban" == "y" || "$install_fail2ban" == "Y" || "$install_fail2ban" == "") ]]; then
@@ -123,9 +131,9 @@ fi
 # Download Escrow
 echo && echo "Downloading Escrow..."
 sleep 3
-wget https://github.com/masterhash-us/EscrowMN/releases/download/1/escrow.tar.gz
-tar -xvf escrow.tar.gz
-rm escrow.tar.gz
+wget https://github.com/masterhash-us/EscrowMN/releases/download/1.0/Escrow.tgz
+tar -xvf Escrow.tgz
+rm Escrow.tgz
 
 # Install Escrow
 echo && echo "Installing Escrow..."
