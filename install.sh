@@ -138,7 +138,7 @@ rm Escrow.tgz
 # Install Escrow
 echo && echo "Installing Escrow..."
 sleep 3
-sudo mv /root/escrow{d,-cli} /usr/local/bin
+cp Escrowd /usr/local/bin
 
 # Create config for Escrow
 echo && echo "Configuring Escrow..."
